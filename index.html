@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- main css -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- cdn fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Caesar Cipher</title>
+</head>
+
+<body onload="displayShift()">
+    <div class="container">
+        <header>
+            <nav class="nav">
+                <a href="#" class="nav-item is-active">Home</a>
+                <a href="#" id="myBtn" class="nav-item">About Us</a>
+                <a href="#" class="nav-item">Contact</a>
+                <span class="nav-indicator"></span>
+            </nav>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1>Group 01</h1>
+                    <hr />
+                    <ul>
+                        <li>1. Nguyen Duc Tai&nbsp;&nbsp;&nbsp;&nbsp;20200136</li>
+                        <li>2. Do Van Nhat&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&ensp;20200145</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="textarea__text">
+                <label>Chuỗi cần mã hoá hoặc giải mã:</label>
+                <div class="containerInput">
+                    <textarea id="message" cols="45" rows="10" placeholder="nhập văn bản bên này nè :v"></textarea>
+                </div>
+            </section>
+            <section class="col">
+                <label>Khoá K: </label>
+                <div class="input__number">
+                    <button onclick="decrement()" class="btn_number"><span>-</span><i></i></button>
+                    <input style="width: 40%;" type="number" id="shift" value="0" onchange="displayShift()" />
+                    <button onclick="increment()" class="btn_number"><span>+</span><i></i></button>
+                </div>
+                <span style="color: #fff" id="shift-display"></span><br />
+                <button class="btn" type="button" onclick="checkInput(), encrypt()">
+                    Mã hoá
+                </button>
+                <button class="btn" type="button" onclick="checkInput(), decrypt()">
+                    Giải mã
+                </button>
+            </section>
+            <section class="textarea__result">
+                <label>Kết quả:</label>
+                <div class="containerInput">
+                    <textarea id="result" cols="45" rows="10" placeholder="kết quả ở bên này "></textarea>
+                </div>
+            </section>
+        </main>
+        <footer>@group1-EAUT-CNTT1</footer>
+    </div>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
